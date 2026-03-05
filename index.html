@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jasa Pembuatan Website Profesional</title>
+<meta name="description" content="Jasa pembuatan website profesional landing page, toko online dan company profile dengan desain modern dan SEO friendly.">
+<meta name="keywords" content="jasa website, jasa pembuatan website, jasa landing page">
+
+<!-- Google Analytics (ganti G-XXXX) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);} 
+gtag('js', new Date());
+
+gtag('config', 'G-XXXX');
+</script>
+
+<!-- SEO Schema Markup -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Organization",
+"name":"HabibiWeb",
+"url":"https://example.com",
+"logo":"https://example.com/logo.png",
+"sameAs":["https://instagram.com","https://youtube.com"]
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+
+body{background:#0f172a;color:white;transition:0.3s}
+
+body.light{
+background:#ffffff;
+color:#111
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:#020617;
+position:sticky;
+top:0;
+z-index:100
+}
+
+body.light header{background:#fff}
+
+nav a{margin-left:20px;color:inherit;text-decoration:none}
+
+.toggle{
+cursor:pointer;
+padding:8px 14px;
+border-radius:6px;
+background:#38bdf8;
+color:#000
+}
+
+/* Hero Parallax */
+.hero{
+height:90vh;
+background:url("https://images.unsplash.com/photo-1555066931-4365d14bab8c") center/cover fixed;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px
+}
+
+.hero h1{font-size:48px;margin-bottom:20px}
+
+.btn{
+background:#38bdf8;
+padding:14px 26px;
+border-radius:8px;
+color:#000;
+text-decoration:none;
+font-weight:600
+}
+
+.section{padding:80px 10%;text-align:center}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:40px
+}
+
+.card{
+background:#020617;
+padding:30px;
+border-radius:10px
+}
+
+body.light .card{background:#f1f5f9}
+
+/* Portfolio Slider */
+.swiper{margin-top:40px}
+
+.swiper-slide img{
+width:100%;
+border-radius:10px
+}
+
+/* Counter */
+.counter{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:40px
+}
+
+.counter-box{
+background:#020617;
+padding:30px;
+border-radius:10px
+}
+
+body.light .counter-box{background:#f1f5f9}
+
+.counter-box h3{font-size:34px;color:#38bdf8}
+
+/* FAQ */
+.faq{max-width:800px;margin:40px auto;text-align:left}
+
+.faq-item{
+padding:20px;
+background:#020617;
+margin-bottom:10px;
+border-radius:8px;
+cursor:pointer
+}
+
+body.light .faq-item{background:#f1f5f9}
+
+.faq-answer{display:none;margin-top:10px;opacity:.8}
+
+/* Form */
+form{max-width:400px;margin:40px auto;display:grid;gap:15px}
+
+input,textarea{
+padding:12px;border:none;border-radius:6px
+}
+
+button{
+padding:12px;border:none;border-radius:6px;background:#38bdf8;font-weight:600
+}
+
+/* Floating WA */
+.wa{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+width:60px;height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+color:white;
+text-decoration:none
+}
+
+/* Live chat */
+.chatbox{
+position:fixed;
+bottom:90px;
+right:20px;
+width:260px;
+background:white;
+color:black;
+border-radius:10px;
+padding:15px;
+display:none
+}
+
+footer{padding:40px;text-align:center;margin-top:60px}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>HabibiWeb</h2>
+<nav>
+<a href="#fitur">Fitur</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#faq">FAQ</a>
+<a href="#order">Order</a>
+</nav>
+<div class="toggle" onclick="toggleMode()">Mode</div>
+</header>
+
+<section class="hero">
+<div data-aos="fade-up">
+<h1>Jasa Pembuatan Website Profesional</h1>
+<p>Website modern untuk bisnis Anda</p>
+<br>
+<a class="btn" href="#order">Pesan Sekarang</a>
+</div>
+</section>
+
+<section class="section" id="fitur">
+<h2 data-aos="fade-up">Fitur Website</h2>
+
+<div class="cards">
+<div class="card" data-aos="zoom-in">Fast Loading</div>
+<div class="card" data-aos="zoom-in">SEO Friendly</div>
+<div class="card" data-aos="zoom-in">Responsive</div>
+<div class="card" data-aos="zoom-in">Secure</div>
+</div>
+</section>
+
+<section class="section" id="portfolio">
+<h2 data-aos="fade-up">Portfolio Client</h2>
+
+<div class="swiper">
+<div class="swiper-wrapper">
+<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d"></div>
+<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1551650975-87deedd944c3"></div>
+<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1547658719-da2b51169166"></div>
+</div>
+</div>
+
+</section>
+
+<section class="section">
+<h2>Statistik</h2>
+
+<div class="counter">
+<div class="counter-box">
+<h3 id="c1">0</h3>
+<p>Client</p>
+</div>
+
+<div class="counter-box">
+<h3 id="c2">0</h3>
+<p>Website</p>
+</div>
+
+<div class="counter-box">
+<h3 id="c3">0</h3>
+<p>Review</p>
+</div>
+</div>
+
+</section>
+
+<section class="section" id="faq">
+<h2>FAQ</h2>
+
+<div class="faq">
+
+<div class="faq-item">
+<strong>Berapa lama pembuatan website?</strong>
+<div class="faq-answer">Sekitar 2-7 hari.</div>
+</div>
+
+<div class="faq-item">
+<strong>Apakah dapat domain?</strong>
+<div class="faq-answer">Ya bisa dibantu.</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="order">
+<h2>Order Website</h2>
+
+<form onsubmit="sendForm(event)">
+<input id="nama" placeholder="Nama">
+<input id="wa" placeholder="WhatsApp">
+<textarea id="pesan" placeholder="Jenis website"></textarea>
+<button>Kirim</button>
+</form>
+
+</section>
+
+<footer>
+<p>© 2026 HabibiWeb</p>
+</footer>
+
+<div class="chatbox" id="chatbox">
+Halo 👋 butuh bantuan?
+<br><br>
+<a href="https://wa.me/6281934704296" target="_blank">Chat WhatsApp</a>
+</div>
+
+<a class="wa" onclick="toggleChat()">💬</a>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+AOS.init();
+
+new Swiper('.swiper',{
+loop:true,
+autoplay:{delay:3000}
+});
+
+function toggleMode(){
+document.body.classList.toggle('light');
+}
+
+function toggleChat(){
+let c=document.getElementById('chatbox');
+c.style.display=c.style.display==='block'?'none':'block';
+}
+
+function animate(id,end){
+let el=document.getElementById(id);
+let n=0;
+let t=setInterval(()=>{
+n++;
+el.innerText=n;
+if(n==end)clearInterval(t);
+},20);
+}
+
+animate('c1',120);
+animate('c2',340);
+animate('c3',98);
+
+let faq=document.querySelectorAll('.faq-item');
+faq.forEach(f=>{
+f.onclick=()=>{
+let a=f.querySelector('.faq-answer');
+a.style.display=a.style.display==='block'?'none':'block';
+}
+});
+
+function sendForm(e){
+e.preventDefault();
+let n=document.getElementById('nama').value;
+let w=document.getElementById('wa').value;
+let p=document.getElementById('pesan').value;
+
+let text=`Halo saya ${n}%0AWhatsApp:${w}%0AKebutuhan:${p}`;
+
+window.open(`https://wa.me/6281934704296?text=${text}`);
+
+window.location.href=`abdulhabibhasibuan.id@gmail.com?subject=Order Website&body=${text}`;
+}
+
+</script>
+
+</body>
+</html>
