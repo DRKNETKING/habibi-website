@@ -1,237 +1,263 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HabibiDWL Vision Agency</title>
-<meta name="description" content="Agency website dengan teknologi AI, 3D interaction dan dashboard lead client">
+<title>Agency Ultra Premium - Jasa Pembuatan Website</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<!-- SEO -->
+<meta name="description" content="Jasa pembuatan website profesional dengan teknologi modern, AI automation, dan desain premium.">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Libraries -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter, sans-serif;background:#05070d;color:white;overflow-x:hidden}
-
-nav{position:fixed;width:100%;padding:18px 8%;display:flex;justify-content:space-between;background:rgba(255,255,255,0.05);backdrop-filter:blur(12px);z-index:999}
-nav a{color:white;margin-left:20px;text-decoration:none}
-
-.hero{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.hero h1{font-size:72px;background:linear-gradient(90deg,#60a5fa,#a78bfa);-webkit-background-clip:text;color:transparent}
-.hero p{opacity:.8;margin-top:20px}
-
-.btn{margin-top:30px;padding:16px 40px;background:#6366f1;border:none;border-radius:14px;color:white;cursor:pointer}
-
-section{padding:120px 8%}
-
-.glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px);border-radius:20px;padding:30px}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
-
-/* 3D showcase */
-
-#iphone3d{width:100%;height:500px}
-
-canvas{position:fixed;top:0;left:0;z-index:-1}
-
-/* portfolio */
-
-.swiper{padding:60px 0}
-.swiper-slide{width:320px;background:#111827;border-radius:18px;overflow:hidden}
-.swiper-slide img{width:100%}
-
-/* blog */
-.blog-card{background:#111827;padding:25px;border-radius:16px}
-
-/* map */
-#visitorMap{height:400px;border-radius:20px;background:#111827;display:flex;align-items:center;justify-content:center}
-
-/* chatbot */
-#chatbot{position:fixed;bottom:90px;right:20px;width:320px;background:#111827;border-radius:16px;display:none;flex-direction:column}
-#chatbot header{padding:10px;background:#6366f1}
-#chatbot textarea{border:none;padding:12px;height:90px}
-#chatbot button{border:none;background:#6366f1;color:white;padding:12px}
-
-/* admin panel */
-#admin{display:none}
-#admin table{width:100%;border-collapse:collapse}
-#admin td,#admin th{border:1px solid #333;padding:10px}
-
-.wa{position:fixed;bottom:30px;right:30px;background:#25D366;padding:16px;border-radius:50%;text-decoration:none;color:white}
+body{margin:0;font-family:Inter,Arial;background:#0b0b0f;color:white}
+header{padding:40px;text-align:center}
+h1{font-size:48px}
+.section{padding:80px 20px;max-width:1200px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:rgba(255,255,255,0.05);padding:25px;border-radius:14px}
+button{padding:12px 20px;border-radius:8px;border:none;background:#4f46e5;color:white;cursor:pointer}
+#iphoneCanvas{height:500px}
+#map{height:400px;background:#111;border-radius:10px}
+input,textarea{width:100%;padding:10px;margin-top:10px;border-radius:8px;border:none}
+#dashboard{display:none}
 </style>
 </head>
 
 <body>
 
-<nav>
-<h2>HabibiDWL</h2>
-<div>
-<a href="#">Home</a>
-<a href="#portfolio">Portfolio</a>
-<a href="#blog">Blog</a>
-<a href="#admin" onclick="openAdmin()">Admin</a>
-</div>
-</nav>
+<header>
+<h1>Premium Website Agency</h1>
+<p>Silicon Valley Level Web Development</p>
+</header>
 
-<section class="hero">
-<h1>Vision Pro Website Agency</h1>
-<p>AI Sales Bot • 3D Interaction • Startup Level Design</p>
-<button class="btn">Mulai Proyek</button>
-</section>
-
-<section>
+<section class="section">
 <h2>3D iPhone Showcase</h2>
-<div id="iphone3d"></div>
+<div id="iphoneCanvas"></div>
 </section>
 
-<section id="portfolio">
-<h2>Portfolio</h2>
-<div class="swiper">
-<div class="swiper-wrapper">
-<script>
-for(let i=1;i<=30;i++){
-document.write(`<div class="swiper-slide"><img src="https://picsum.photos/600/400?random=${i}"></div>`)
-}
-</script>
-</div>
+<section class="section">
+<h2>Services</h2>
+<div class="grid">
+<div class="card">Landing Page</div>
+<div class="card">Company Profile</div>
+<div class="card">Ecommerce</div>
+<div class="card">SEO Optimization</div>
 </div>
 </section>
 
-<section id="blog">
-<h2>Auto SEO Blog</h2>
-<div class="grid" id="blogContainer"></div>
-</section>
-
-<section>
-<h2>Live Visitor Map</h2>
-<div id="visitorMap">Realtime visitor akan tampil di sini (integrasi API analytics)</div>
-</section>
-
-<section>
+<section class="section">
 <h2>Order Website</h2>
-<form id="form" class="glass">
-<input type="text" placeholder="Nama" required style="width:100%;padding:10px"><br><br>
-<input type="email" placeholder="Email" required style="width:100%;padding:10px"><br><br>
-<textarea placeholder="Pesan" style="width:100%;padding:10px"></textarea><br><br>
-<button class="btn">Kirim</button>
+<form id="orderForm">
+<input placeholder="Nama" required>
+<input placeholder="Email" required>
+<textarea placeholder="Kebutuhan Website"></textarea>
+<button type="submit">Kirim</button>
 </form>
 </section>
 
-<section id="admin" class="glass">
-<h2>Dashboard Lead Client</h2>
-<table>
-<thead>
-<tr>
-<th>Nama</th>
-<th>Email</th>
-<th>Pesan</th>
-</tr>
-</thead>
-<tbody id="leadTable"></tbody>
-</table>
+<section class="section">
+<h2>Live Visitor Map</h2>
+<div id="map"></div>
 </section>
 
-<div id="chatbot">
-<header>AI Sales Bot</header>
-<textarea id="chatInput" placeholder="Tanya tentang jasa website..."></textarea>
-<button onclick="sendChat()">Kirim</button>
-</div>
+<section class="section">
+<h2>AI Blog Generator</h2>
+<input id="blogTopic" placeholder="Topik artikel SEO">
+<button onclick="generateBlog()">Generate Artikel</button>
+<div id="blogOutput"></div>
+</section>
 
-<a class="wa" href="https://wa.me/6281934704296">WA</a>
+<section class="section">
+<h2>AI Sales Chatbot</h2>
+<input id="chatInput" placeholder="Tanya tentang jasa website...">
+<button onclick="chatBot()">Kirim</button>
+<div id="chatOutput"></div>
+</section>
 
-<script>
+<section class="section">
+<h2>Admin Login</h2>
+<input id="user" placeholder="username">
+<input id="pass" placeholder="password" type="password">
+<button onclick="login()">Login</button>
+</section>
 
-new Swiper('.swiper',{slidesPerView:'auto',spaceBetween:30,loop:true,autoplay:{delay:2000}})
+<section id="dashboard" class="section">
+<h2>Admin Dashboard</h2>
+<p>Data Lead Client</p>
+<ul id="leadList"></ul>
 
-/* lead system */
-
-document.getElementById("form").addEventListener("submit",function(e){
-e.preventDefault()
-
-let name=this[0].value
-let email=this[1].value
-let msg=this[2].value
-
-let table=document.getElementById("leadTable")
-
-let row=`<tr><td>${name}</td><td>${email}</td><td>${msg}</td></tr>`
-
-localStorage.setItem("lead_"+Date.now(),row)
-
-table.innerHTML+=row
-
-window.open("https://wa.me/6281934704296")
-})
-
-/* load leads */
-
-for(let key in localStorage){
-if(key.startsWith("lead_")){
-document.getElementById("leadTable").innerHTML+=localStorage.getItem(key)
-}
-}
-
-function openAdmin(){
-document.getElementById("admin").style.display="block"
-}
-
-/* AI chatbot */
-
-async function sendChat(){
-let msg=document.getElementById("chatInput").value
-await fetch("https://api.openai.com/v1/chat/completions",{
-method:"POST",
-headers:{"Content-Type":"application/json","Authorization":"Bearer YOUR_OPENAI_KEY"},
-body:JSON.stringify({model:"gpt-4o-mini",messages:[{role:"system",content:"Kamu adalah sales jasa pembuatan website"},{role:"user",content:msg}]})
-})
-alert("AI memproses pertanyaan")
-}
-
-/* auto blog generator demo */
-
-let posts=[
-"Cara Website Ranking di Google",
-"Kenapa Bisnis Harus Punya Website",
-"Tips Landing Page Convert Tinggi",
-"Strategi SEO untuk Startup"
-]
-
-posts.forEach(p=>{
-document.getElementById("blogContainer").innerHTML+=`<div class='blog-card'><h3>${p}</h3></div>`
-})
-
-</script>
+<h3>CMS Blog Editor</h3>
+<input id="title" placeholder="judul">
+<textarea id="content" placeholder="isi artikel"></textarea>
+<button onclick="publishPost()">Publish</button>
+<div id="posts"></div>
+</section>
 
 <script>
 
-/* 3D Vision interaction */
+/* 3D IPHONE MODEL */
 
 const scene=new THREE.Scene()
-const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000)
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/500,0.1,1000)
 const renderer=new THREE.WebGLRenderer({alpha:true})
-renderer.setSize(window.innerWidth,window.innerHeight)
-document.body.appendChild(renderer.domElement)
+renderer.setSize(window.innerWidth,500)
+document.getElementById("iphoneCanvas").appendChild(renderer.domElement)
 
-const geometry=new THREE.TorusKnotGeometry(10,3,120,16)
-const material=new THREE.MeshBasicMaterial({wireframe:true})
-const mesh=new THREE.Mesh(geometry,material)
+const geometry=new THREE.BoxGeometry(2,4,0.3)
+const material=new THREE.MeshNormalMaterial()
+const phone=new THREE.Mesh(geometry,material)
+scene.add(phone)
 
-scene.add(mesh)
-
-camera.position.z=30
+camera.position.z=6
 
 function animate(){
 requestAnimationFrame(animate)
-mesh.rotation.x+=0.003
-mesh.rotation.y+=0.003
+phone.rotation.y+=0.01
 renderer.render(scene,camera)
 }
-
 animate()
+
+/* MOUSE ROTATE */
+
+document.addEventListener("mousemove",e=>{
+phone.rotation.y=e.clientX/500
+phone.rotation.x=e.clientY/500
+})
+
+
+/* LEAD STORAGE */
+
+let leads=JSON.parse(localStorage.getItem("leads")||"[]")
+
+orderForm.onsubmit=e=>{
+ e.preventDefault()
+ const data={
+ name:e.target[0].value,
+ email:e.target[1].value,
+ msg:e.target[2].value
+ }
+ leads.push(data)
+ localStorage.setItem("leads",JSON.stringify(leads))
+ alert("Lead masuk!")
+}
+
+
+/* VISITOR MAP DEMO */
+
+const map=document.getElementById("map")
+setInterval(()=>{
+ const dot=document.createElement("div")
+ dot.style.position="absolute"
+ dot.style.width="6px"
+ dot.style.height="6px"
+ dot.style.background="red"
+ dot.style.borderRadius="50%"
+ dot.style.left=Math.random()*100+"%"
+ dot.style.top=Math.random()*100+"%"
+ map.appendChild(dot)
+},1000)
+
+
+/* AI BLOG GENERATOR */
+
+async function generateBlog(){
+ const topic=document.getElementById("blogTopic").value
+ const res=await fetch("https://api.openai.com/v1/chat/completions",{
+ method:"POST",
+ headers:{
+  "Content-Type":"application/json",
+  "Authorization":"Bearer YOUR_OPENAI_KEY"
+ },
+ body:JSON.stringify({
+  model:"gpt-4o-mini",
+  messages:[{role:"user",content:"buat artikel SEO tentang "+topic}]
+ })
+ })
+
+ const data=await res.json()
+ blogOutput.innerHTML=marked.parse(data.choices[0].message.content)
+}
+
+
+/* AI SALES BOT */
+
+async function chatBot(){
+ const q=chatInput.value
+
+ const res=await fetch("https://api.openai.com/v1/chat/completions",{
+ method:"POST",
+ headers:{
+  "Content-Type":"application/json",
+  "Authorization":"Bearer YOUR_OPENAI_KEY"
+ },
+ body:JSON.stringify({
+  model:"gpt-4o-mini",
+  messages:[
+   {role:"system",content:"kamu adalah sales jasa pembuatan website profesional"},
+   {role:"user",content:q}
+  ]
+ })
+ })
+
+ const data=await res.json()
+ chatOutput.innerText=data.choices[0].message.content
+}
+
+
+/* ADMIN LOGIN */
+
+function login(){
+ const u=user.value
+ const p=pass.value
+ if(u=="admin" && p=="habib"){
+  dashboard.style.display="block"
+  renderLeads()
+ }
+}
+
+
+function renderLeads(){
+ leadList.innerHTML=""
+ leads.forEach(l=>{
+  const li=document.createElement("li")
+  li.textContent=l.name+" - "+l.email
+  leadList.appendChild(li)
+ })
+}
+
+
+/* MINI CMS */
+
+let posts=JSON.parse(localStorage.getItem("posts")||"[]")
+
+function publishPost(){
+ const post={
+  title:title.value,
+  content:content.value
+ }
+
+ posts.push(post)
+ localStorage.setItem("posts",JSON.stringify(posts))
+ renderPosts()
+}
+
+function renderPosts(){
+ postsDiv=document.getElementById("posts")
+ postsDiv.innerHTML=""
+ posts.forEach(p=>{
+  const div=document.createElement("div")
+  div.className="card"
+  div.innerHTML="<h4>"+p.title+"</h4><p>"+p.content+"</p>"
+  postsDiv.appendChild(div)
+ })
+}
+
+renderPosts()
 
 </script>
 
