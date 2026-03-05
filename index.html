@@ -3,78 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silicon Valley Web Agency</title>
-<meta name="description" content="Premium website development agency with AI automation, analytics dashboard, and SEO optimized system.">
+<title>JasaWebsite Pro Agency</title>
+<meta name="description" content="Agency pembuatan website profesional dengan AI automation, SEO system, CRM client, dan desain premium seperti Apple.">
 
-<!-- Performance / SEO optimized -->
+<!-- PERFORMANCE / SEO -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="preconnect" href="https://api.ipify.org">
 
+<!-- LIBRARIES -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.134/examples/js/loaders/GLTFLoader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-body{margin:0;font-family:Inter,Arial;background:#07070a;color:white}
+body{margin:0;font-family:Inter,Arial;background:#050507;color:white}
 header{padding:80px 20px;text-align:center}
-h1{font-size:50px;margin:0}
+h1{font-size:52px;margin:0}
 .section{padding:80px 20px;max-width:1200px;margin:auto}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
-.card{background:rgba(255,255,255,0.05);padding:25px;border-radius:14px;backdrop-filter:blur(8px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.card{background:rgba(255,255,255,0.05);padding:25px;border-radius:14px;backdrop-filter:blur(10px)}
 button{padding:12px 20px;border:none;border-radius:8px;background:#4f46e5;color:white;cursor:pointer}
 input,textarea{width:100%;padding:10px;margin-top:10px;border-radius:8px;border:none}
 #iphone{height:520px}
 #map{height:400px;background:#111;border-radius:10px;position:relative;overflow:hidden}
 #dashboard{display:none}
-canvas{max-width:100%}
+.portfolio img{width:100%;border-radius:10px}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;font-size:22px}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>Startup Level Web Agency</h1>
-<p>3D Website • AI Automation • SEO System</p>
+<h1>JasaWebsite Pro Agency</h1>
+<p>Website Premium • AI Automation • SEO Ranking</p>
 </header>
 
+<!-- 3D PRODUCT -->
 <section class="section">
-<h2>3D iPhone Product Showcase</h2>
+<h2>3D Product Showcase</h2>
 <div id="iphone"></div>
 </section>
 
+<!-- SERVICES -->
 <section class="section">
-<h2>Services</h2>
+<h2>Layanan Kami</h2>
 <div class="grid">
 <div class="card">Landing Page Premium</div>
-<div class="card">Company Profile</div>
-<div class="card">Ecommerce Website</div>
-<div class="card">SEO Ranking System</div>
+<div class="card">Website Company Profile</div>
+<div class="card">Toko Online Ecommerce</div>
+<div class="card">Website Sekolah</div>
+<div class="card">Website Portal Berita</div>
+<div class="card">SEO Optimization</div>
+<div class="card">Maintenance Website</div>
+<div class="card">Speed Optimization</div>
 </div>
 </section>
 
+<!-- PORTFOLIO -->
+<section class="section">
+<h2>Portfolio Client</h2>
+<div class="grid portfolio">
+<img src="https://picsum.photos/500/300?1">
+<img src="https://picsum.photos/500/300?2">
+<img src="https://picsum.photos/500/300?3">
+<img src="https://picsum.photos/500/300?4">
+<img src="https://picsum.photos/500/300?5">
+<img src="https://picsum.photos/500/300?6">
+<img src="https://picsum.photos/500/300?7">
+<img src="https://picsum.photos/500/300?8">
+<img src="https://picsum.photos/500/300?9">
+<img src="https://picsum.photos/500/300?10">
+</div>
+</section>
+
+<!-- ORDER -->
 <section class="section">
 <h2>Order Website</h2>
 <form id="orderForm">
-<input id="name" placeholder="Nama" required>
-<input id="email" placeholder="Email" required>
+<input id="name" placeholder="Nama">
+<input id="email" placeholder="Email">
 <textarea id="msg" placeholder="Kebutuhan website"></textarea>
 <button>Kirim</button>
 </form>
 </section>
 
+<!-- VISITOR MAP -->
 <section class="section">
-<h2>Visitor Map Realtime</h2>
+<h2>Visitor Dunia Realtime</h2>
 <div id="map"></div>
 </section>
 
+<!-- AI CHATBOT -->
 <section class="section">
-<h2>AI Sales Chatbot</h2>
-<input id="chatInput" placeholder="Tanya jasa website...">
+<h2>AI Sales Assistant</h2>
+<input id="chatInput" placeholder="Tanya tentang jasa website...">
 <button onclick="chatBot()">Kirim</button>
 <div id="chatOutput"></div>
 </section>
 
+<!-- BLOG -->
+<section class="section">
+<h2>Blog SEO</h2>
+<div id="blogList" class="grid"></div>
+</section>
+
+<!-- LOGIN -->
 <section class="section">
 <h2>Admin Login</h2>
 <input id="user" placeholder="username">
@@ -82,34 +117,34 @@ canvas{max-width:100%}
 <button onclick="login()">Login</button>
 </section>
 
+<!-- DASHBOARD -->
 <section id="dashboard" class="section">
-<h2>Dashboard Analytics</h2>
+<h2>CRM Dashboard</h2>
 <canvas id="chart"></canvas>
 
 <h3>Lead Client</h3>
 <ul id="leadList"></ul>
 
-<h3>CMS Blog</h3>
-<input id="title" placeholder="judul artikel">
-<textarea id="content" placeholder="isi artikel"></textarea>
+<h3>CMS Blog Editor</h3>
+<input id="title" placeholder="Judul artikel">
+<textarea id="content" placeholder="Isi artikel"></textarea>
 <button onclick="publishPost()">Publish</button>
+
 <div id="posts"></div>
 </section>
 
+<a class="whatsapp" href="https://wa.me/6281934704296">WA</a>
+
 <script>
 
-/* =============================
-SUPABASE DATABASE
-=============================*/
+/* SUPABASE */
 
 const SUPABASE_URL="YOUR_SUPABASE_URL"
 const SUPABASE_KEY="YOUR_SUPABASE_KEY"
 const supabaseClient=supabase.createClient(SUPABASE_URL,SUPABASE_KEY)
 
 
-/* =============================
-3D IPHONE MODEL
-=============================*/
+/* 3D IPHONE */
 
 const scene=new THREE.Scene()
 const camera=new THREE.PerspectiveCamera(75,window.innerWidth/500,0.1,1000)
@@ -140,9 +175,7 @@ function animate(){
 }
 
 
-/* =============================
-LEAD SYSTEM
-=============================*/
+/* ORDER SYSTEM */
 
 orderForm.onsubmit=async e=>{
  e.preventDefault()
@@ -155,59 +188,19 @@ orderForm.onsubmit=async e=>{
 
  await supabaseClient.from("leads").insert([data])
 
- sendWhatsApp(data)
- sendGoogleSheet(data)
- sendEmail(data)
+ window.open("https://wa.me/6281934704296?text="+encodeURIComponent(
+  "Halo saya "+data.name+" ingin membuat website"
+ ))
 
- alert("Lead terkirim")
-}
-
-
-/* =============================
-WHATSAPP LEAD
-=============================*/
-
-function sendWhatsApp(d){
- const url="https://wa.me/6281934704296?text="+encodeURIComponent(
-  "Lead baru:\n"+d.name+"\n"+d.email+"\n"+d.msg
- )
- window.open(url)
-}
-
-
-/* =============================
-GOOGLE SHEET WEBHOOK
-=============================*/
-
-function sendGoogleSheet(d){
  fetch("YOUR_GOOGLE_SCRIPT_URL",{
-  method:"POST",
-  body:JSON.stringify(d)
- })
-}
-
-
-/* =============================
-EMAIL API
-=============================*/
-
-function sendEmail(d){
- fetch("https://api.emailjs.com/api/v1.0/email/send",{
  method:"POST",
- headers:{"Content-Type":"application/json"},
- body:JSON.stringify({
-  service_id:"YOUR_SERVICE",
-  template_id:"YOUR_TEMPLATE",
-  user_id:"YOUR_USER",
-  template_params:d
+ body:JSON.stringify(data)
  })
- })
+
 }
 
 
-/* =============================
-VISITOR MAP IP
-=============================*/
+/* VISITOR MAP */
 
 async function visitor(){
  const res=await fetch("https://ipapi.co/json/")
@@ -228,9 +221,7 @@ async function visitor(){
 visitor()
 
 
-/* =============================
-AI SALES BOT
-=============================*/
+/* AI SALES BOT */
 
 async function chatBot(){
 
@@ -245,7 +236,7 @@ async function chatBot(){
  body:JSON.stringify({
   model:"gpt-4o-mini",
   messages:[
-   {role:"system",content:"kamu sales jasa pembuatan website yang tugasnya closing client"},
+   {role:"system",content:"kamu sales jasa pembuatan website dan tugasmu closing client"},
    {role:"user",content:q}
   ]
  })
@@ -256,11 +247,9 @@ async function chatBot(){
 }
 
 
-/* =============================
-ADMIN LOGIN
-=============================*/
+/* LOGIN */
 
-async function login(){
+function login(){
  if(user.value=="admin" && pass.value=="admin123"){
   dashboard.style.display="block"
   loadLeads()
@@ -269,44 +258,33 @@ async function login(){
 }
 
 
-/* =============================
-LOAD LEADS
-=============================*/
+/* LOAD LEADS */
 
 async function loadLeads(){
-
  const {data}=await supabaseClient.from("leads").select("*")
-
  leadList.innerHTML=""
  data.forEach(l=>{
   const li=document.createElement("li")
   li.textContent=l.name+" - "+l.email
   leadList.appendChild(li)
  })
-
 }
 
 
-/* =============================
-ANALYTICS DASHBOARD
-=============================*/
+/* ANALYTICS */
 
 function analytics(){
-
  new Chart(chart,{
-  type:"bar",
+  type:"line",
   data:{
    labels:["Mon","Tue","Wed","Thu","Fri"],
-   datasets:[{label:"Visitors",data:[5,8,12,9,14]}]
+   datasets:[{label:"Visitors",data:[5,10,8,14,20]}]
   }
  })
-
 }
 
 
-/* =============================
-CMS BLOG
-=============================*/
+/* CMS BLOG */
 
 async function publishPost(){
 
@@ -325,15 +303,22 @@ async function loadPosts(){
 
  const {data}=await supabaseClient.from("posts").select("*")
 
+ blogList.innerHTML=""
  posts.innerHTML=""
 
  data.forEach(p=>{
 
  const div=document.createElement("div")
  div.className="card"
- div.innerHTML="<h4>"+p.title+"</h4><p>"+p.content+"</p>"
+ div.innerHTML="<h3>"+p.title+"</h3><p>"+p.content.substring(0,120)+"...</p>"
 
- posts.appendChild(div)
+ blogList.appendChild(div)
+
+ const adminDiv=document.createElement("div")
+ adminDiv.className="card"
+ adminDiv.innerHTML="<h4>"+p.title+"</h4><p>"+p.content+"</p>"
+
+ posts.appendChild(adminDiv)
 
  })
 
@@ -345,5 +330,6 @@ loadPosts()
 
 </body>
 </html>
+
 
 
